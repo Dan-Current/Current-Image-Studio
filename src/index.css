@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gray-50: #fafaf9;
+  --color-gray-100: #f5f5f4;
+  --color-gray-200: #e7e5e4;
+  --color-gray-300: #d6d3d1;
+  --color-gray-400: #a8a29e;
+  --color-gray-500: #78716c;
+  --color-gray-600: #57534e;
+  --color-gray-700: #44403c;
+  --color-gray-800: #292524;
+  --color-gray-900: #1c1917;
+  --color-gray-950: #0c0a09;
+}
+
+:root {
+  --bg-canvas: #0a0a0a;
+  --bg-panel: #161616;
+  --bg-panel-2: #1e1e1e;
+  --bg-field: rgba(0, 0, 0, 0.4);
+  --overlay-4: rgba(255, 255, 255, 0.04);
+  --overlay-5: rgba(255, 255, 255, 0.05);
+  --overlay-8: rgba(255, 255, 255, 0.08);
+  --overlay-10: rgba(255, 255, 255, 0.1);
+  --overlay-20: rgba(255, 255, 255, 0.2);
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+  --dot-color: rgba(255, 255, 255, 0.07);
+  --pill-active-bg: #ffffff;
+  --pill-active-text: #000000;
+}
+
+[data-theme="light"] {
+  --bg-canvas: var(--color-gray-50);
+  --bg-panel: #ffffff;
+  --bg-panel-2: var(--color-gray-100);
+  --bg-field: rgba(0, 0, 0, 0.045);
+  --overlay-4: rgba(0, 0, 0, 0.04);
+  --overlay-5: rgba(0, 0, 0, 0.05);
+  --overlay-8: rgba(0, 0, 0, 0.08);
+  --overlay-10: rgba(0, 0, 0, 0.1);
+  --overlay-20: rgba(0, 0, 0, 0.2);
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-500);
+  --dot-color: rgba(0, 0, 0, 0.08);
+  --pill-active-bg: var(--color-gray-900);
+  --pill-active-text: #ffffff;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(182, 242, 59, 0.15);
+    border-radius: 20px;
+    border: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(182, 242, 59, 0.3);
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+  }
+}
